@@ -48,16 +48,13 @@ Ignore spaces and special characters.
 
 def Countstr(string):
     cleaned= "".join(filter(str.isalpha,string))
-    for char in cleaned:
-        vowels=0
-        consonants=0
-        Vowels=["a","e","i","o","u"]
-        if char in Vowels:
+    vowels=0
+    consonants=0
+    for char in cleaned:    
+        if char in "aeiouAEIOU":
             vowels+=1
-            continue
         else:
             consonants+=1
-            continue
             
     print(f"Vowels={vowels}\nConsonants={consonants}") 
     

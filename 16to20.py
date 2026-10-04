@@ -8,7 +8,18 @@ checking every number up to n.
 """
 
 def prime(n):
-    pass
+    if n <2:
+        return "Not prime"
+    else:
+        i=2
+    while i*i <=n:
+        if n%i==0:
+            return "Not prime"
+        else:
+            i+=1
+    return "Prime"
+print(prime(17))
+        
 
 """ 
 17. Print Prime Numbers in a Range
@@ -18,8 +29,24 @@ Output: 11 13 17 19 23 29
 
 """
 
+def is_prime(n):
+    if n<2:
+        return False
+    else:
+        i =2
+    while i*i<=n:
+        if n%i==0:
+            return False
+        else:
+            i+=1
+    return True
+
 def primeinbw(n,m):
-    pass
+    for i in range(n, m+1):
+        if is_prime(i):
+            print(i,end=" ")
+           
+primeinbw(11,29)
 
 
 
@@ -29,7 +56,7 @@ Print the first n Fibonacci numbers.
 Input: 7
 Output: 0 1 1 2 3 5 8
 """
-
+print("\n")
 def fibo(n):
     series=[0,1]
     for i in range(2,n):
@@ -48,8 +75,14 @@ Try to implement the Euclidean algorithm.
 """
 
 def gcd(n,m):
-    pass
-
+    a=min(n,m)
+    b=max(n,m)
+    while a!=0:
+        remainder=b%a
+        b=a
+        a=remainder
+    print("\n",b)
+gcd(24,36)
 
 '''
 20. LCM of Two Numbers
@@ -60,7 +93,18 @@ Output: 36
 
 
 def lcm(n,m):
-    pass
+    if n>m:
+        start=n
+    else:
+        start=m
+    
+    while True:
+        if start%n==0 and start%m==0:
+            print("LCM =", start)
+            break
+        start+=1
+        
+lcm(12,18)
 
 
 

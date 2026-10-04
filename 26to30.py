@@ -29,8 +29,17 @@ Input: [10, 5, 8, 10, 3]
 Output: 8
 Don't simply sort the array.
 '''
-def sort(list):
-    pass
+def seclargest(list):
+    largest=float("-inf")
+    second= float("-inf")
+    for x in list:
+        if x>largest:
+            second= largest
+            largest=x
+        elif x>second and x!=largest:
+            second=x
+    print(second)
+seclargest([10,5,8,10,3])   
 
 '''
 28. Remove Duplicates
